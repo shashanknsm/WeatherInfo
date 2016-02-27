@@ -6,15 +6,15 @@
 //  Copyright © 2016 personal. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "WIMasterViewController.h"
 
-@interface ViewController ()
+@interface WIMasterViewController ()
 
 @property (nonatomic, strong) NSMutableArray *zipCodes;
 
 @end
 
-@implementation ViewController
+@implementation WIMasterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,6 +40,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [[WIHTTPSessionManager sharedManager] fetchWeatherDataForZipCode:@" " andOnSuccess:^(id responseObject) {
+        
+    } onFailure:^(NSError *error) {
+        
+    }];
     [self performSegueWithIdentifier:@"ModelSegue" sender:nil];
 }
 

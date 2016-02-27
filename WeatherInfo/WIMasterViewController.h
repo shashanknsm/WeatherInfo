@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WIHTTPSessionManager.h"
 
-@interface ViewController : UIViewController
+
+@interface WIMasterViewController : UIViewController
 
 
 @property (weak, nonatomic) IBOutlet UITableView *zipTableView;
