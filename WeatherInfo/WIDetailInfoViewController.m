@@ -33,11 +33,8 @@
     // Pass the selected object to the new view controller.
 }
 */
-<<<<<<< HEAD
 - (IBAction)dismissButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-=======
->>>>>>> ce12f5b5f186cf73b8002f2e726594506227096a
 
 @end
