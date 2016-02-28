@@ -1,8 +1,8 @@
 //
-//  ViewController.h
+//  WIZipcodeTableViewController.h
 //  WeatherInfo
 //
-//  Created by PCS MV on 2/25/16.
+//  Created by PCS MV on 2/27/16.
 //  Copyright © 2016 personal. All rights reserved.
 //
 
@@ -10,12 +10,9 @@
 #import "WIHTTPSessionManager.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "WIWeatherData.h"
+#import "WIDetailInfoViewController.h"
 
-@interface WIMasterViewController : UIViewController
 
-
-@property (weak, nonatomic) IBOutlet UITableView *zipTableView;
-
+@interface WIZipcodeTableViewController : UITableViewController
 
 @end
-

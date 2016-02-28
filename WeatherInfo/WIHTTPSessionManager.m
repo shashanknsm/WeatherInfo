@@ -27,11 +27,16 @@ static NSString* const baseURL = @"http://api.wunderground.com/api/69e67fdea2aeb
 
 
 - (void)fetchWeatherDataForZipCode:(NSString *)zipCode andOnSuccess:(SuccessBlock)success onFailure:(failureBlock)failure {
+    NSLog(@"fetching data for %@",zipCode);
     [self GET:zipCode parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
-        NSError *error = nil;
-        WIWeatherData *weather = [MTLJSONAdapter modelOfClass:[WIWeatherData class] fromJSONDictionary:responseObject[@"current_observation"] error:&error];
-        NSLog(@"%@",error);
-        success(weather);
+        NSError *jsonError = nil;
+        NSError *error = responseObject[@"response"][@"error"];
+        WIWeatherData *weather = [MTLJSONAdapter modelOfClass:[WIWeatherData class] fromJSONDictionary:responseObject[@"current_observation"] error:&jsonError];
+        if (!error) {
+            success(weather);
+        } else {
+            failure(error);
+        }
     }
     failure:^(NSURLSessionDataTask *task, NSError *error) {
         failure(error);

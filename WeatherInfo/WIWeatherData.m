@@ -21,12 +21,14 @@
         @"windInformation":@"wind_string",
         @"windDirection":@"wind_dir",
         @"dewPoint":@"dewpoint_string",
-       // @"windSpeed":@"wind_mph",
+        @"windSpeed":@"wind_mph",
         @"feelsLike":@"feelslike_string",
         @"visibility":@"visibility_mi",
         @"UV":@"UV",
         @"precipitation":@"precip_1hr_string",
-        @"currentDate":@"local_time_rfc822"
+        @"currentDate":@"local_time_rfc822",
+        @"icon":@"icon",
+        @"iconURL":@"icon_url"
     };
 }
 
@@ -44,6 +46,10 @@
     reverseBlock:^id(NSDate *date, BOOL *success, NSError *__autoreleasing *error) {
             return [[self dateFormatter]stringFromDate:date];
     }];
+}
+
++ (NSValueTransformer *)iconURLJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 

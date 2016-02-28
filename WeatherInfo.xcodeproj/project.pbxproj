@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		50309C4E1C802786009A435D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50309C4D1C802786009A435D /* main.m */; };
 		50309C511C802786009A435D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50309C501C802786009A435D /* AppDelegate.m */; };
-		50309C541C802786009A435D /* WIMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50309C531C802786009A435D /* WIMasterViewController.m */; };
 		50309C571C802786009A435D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50309C551C802786009A435D /* Main.storyboard */; };
 		50309C5A1C802786009A435D /* WeatherInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50309C581C802786009A435D /* WeatherInfo.xcdatamodeld */; };
 		50309C5C1C802786009A435D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50309C5B1C802786009A435D /* Assets.xcassets */; };
@@ -18,6 +17,7 @@
 		50309C751C802786009A435D /* WeatherInfoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50309C741C802786009A435D /* WeatherInfoUITests.m */; };
 		5034F6DC1C823B5F006298FE /* WIHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5034F6DB1C823B5F006298FE /* WIHTTPSessionManager.m */; };
 		5034F6EF1C82606C006298FE /* WIWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5034F6EE1C82606C006298FE /* WIWeatherData.m */; };
+		5034F6F31C8288E6006298FE /* WIZipcodeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5034F6F21C8288E6006298FE /* WIZipcodeTableViewController.m */; };
 		50FE718C1C8162B500ED5F4A /* WIDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FE718B1C8162B500ED5F4A /* WIDetailInfoViewController.m */; };
 		C9D564D7AE33E4C37614E902 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC5F6980DEAFBB55D5BCB13 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -45,8 +45,6 @@
 		50309C4D1C802786009A435D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		50309C4F1C802786009A435D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50309C501C802786009A435D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		50309C521C802786009A435D /* WIMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WIMasterViewController.h; sourceTree = "<group>"; };
-		50309C531C802786009A435D /* WIMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WIMasterViewController.m; sourceTree = "<group>"; };
 		50309C561C802786009A435D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50309C591C802786009A435D /* WeatherInfo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherInfo.xcdatamodel; sourceTree = "<group>"; };
 		50309C5B1C802786009A435D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +60,8 @@
 		5034F6DB1C823B5F006298FE /* WIHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIHTTPSessionManager.m; sourceTree = "<group>"; };
 		5034F6ED1C82606C006298FE /* WIWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIWeatherData.h; sourceTree = "<group>"; };
 		5034F6EE1C82606C006298FE /* WIWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIWeatherData.m; sourceTree = "<group>"; };
+		5034F6F11C8288E6006298FE /* WIZipcodeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIZipcodeTableViewController.h; sourceTree = "<group>"; };
+		5034F6F21C8288E6006298FE /* WIZipcodeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIZipcodeTableViewController.m; sourceTree = "<group>"; };
 		50FE718A1C8162B500ED5F4A /* WIDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIDetailInfoViewController.h; sourceTree = "<group>"; };
 		50FE718B1C8162B500ED5F4A /* WIDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIDetailInfoViewController.m; sourceTree = "<group>"; };
 		D537AFAA2C02AFB8F1D0B621 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,8 +172,8 @@
 		5034F6EC1C825C5D006298FE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				50309C521C802786009A435D /* WIMasterViewController.h */,
-				50309C531C802786009A435D /* WIMasterViewController.m */,
+				5034F6F11C8288E6006298FE /* WIZipcodeTableViewController.h */,
+				5034F6F21C8288E6006298FE /* WIZipcodeTableViewController.m */,
 				50FE718A1C8162B500ED5F4A /* WIDetailInfoViewController.h */,
 				50FE718B1C8162B500ED5F4A /* WIDetailInfoViewController.m */,
 			);
@@ -389,10 +389,10 @@
 			files = (
 				5034F6DC1C823B5F006298FE /* WIHTTPSessionManager.m in Sources */,
 				50309C5A1C802786009A435D /* WeatherInfo.xcdatamodeld in Sources */,
-				50309C541C802786009A435D /* WIMasterViewController.m in Sources */,
 				5034F6EF1C82606C006298FE /* WIWeatherData.m in Sources */,
 				50309C511C802786009A435D /* AppDelegate.m in Sources */,
 				50309C4E1C802786009A435D /* main.m in Sources */,
+				5034F6F31C8288E6006298FE /* WIZipcodeTableViewController.m in Sources */,
 				50FE718C1C8162B500ED5F4A /* WIDetailInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

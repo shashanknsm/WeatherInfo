@@ -18,13 +18,17 @@
 @property (nonatomic, assign, readonly) NSString *relativeHumidity;
 @property (nonatomic, copy, readonly) NSString *windInformation;
 @property (nonatomic, copy, readonly) NSString *windDirection;
-//@property (nonatomic, assign, readonly) NSString *windSpeed;
+@property (nonatomic, assign, readonly) NSNumber *windSpeed;
 @property (nonatomic, copy, readonly) NSString *feelsLike;
 @property (nonatomic, copy, readonly) NSString *visibility;
 @property (nonatomic, copy, readonly) NSString *UV;
 @property (nonatomic, copy, readonly) NSString *precipitation;
 @property (nonatomic, copy, readonly) NSString *dewPoint;
 @property (nonatomic, strong, readonly) NSDate *currentDate;
+@property (nonatomic, strong, readonly) NSString *icon;
+@property (nonatomic, copy, readonly) NSURL *iconURL;
+
+
 
 + (NSDateFormatter *)dateFormatter;
 
