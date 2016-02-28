@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
+    
     [self.zipTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CellIdentifier"];
     [self.zipTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
 }
@@ -40,12 +42,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    [[WIHTTPSessionManager sharedManager] fetchWeatherDataForZipCode:@" " andOnSuccess:^(id responseObject) {
-        
+    NSString *zipCode = [self.zipCodes objectAtIndex:indexPath.row];
+    NSString *queryString = [zipCode stringByAppendingString:@".json"];
+    [SVProgressHUD show];
+    [[WIHTTPSessionManager sharedManager] fetchWeatherDataForZipCode:queryString andOnSuccess:^(WIWeatherData *weatherData) {
+        [SVProgressHUD dismiss];
+//        [self performSegueWithIdentifier:@"ModelSegue" sender:nil];
     } onFailure:^(NSError *error) {
-        
+        [SVProgressHUD dismiss];
+        NSLog(@"Error %@",error);
     }];
-    [self performSegueWithIdentifier:@"ModelSegue" sender:nil];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -79,7 +85,8 @@
          [weakSelf.zipCodes addObject:zipField.text];
          [weakSelf.zipTableView reloadData];
      }];
-    
+     
+    okAction.enabled = NO;
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     
     [alertController addAction:cancelAction];

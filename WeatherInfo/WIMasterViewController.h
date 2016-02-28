@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "WIHTTPSessionManager.h"
-
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "WIWeatherData.h"
 
 @interface WIMasterViewController : UIViewController
 

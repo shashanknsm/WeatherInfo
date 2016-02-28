@@ -7,13 +7,14 @@
 //
 
 #import <AFNetworking/AFNetworking.h>
+#import <MTLModel.h>
+#import "WIWeatherData.h"
 
-typedef void(^SuccessBlock)(id responseObject);
+typedef void(^SuccessBlock)(WIWeatherData *weatherData);
 typedef void(^failureBlock)(NSError *error);
 
 
 @interface WIHTTPSessionManager : AFHTTPSessionManager
-
 
 + (WIHTTPSessionManager *)sharedManager;
 

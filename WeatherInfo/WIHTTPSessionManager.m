@@ -8,6 +8,8 @@
 
 #import "WIHTTPSessionManager.h"
 
+static NSString* const baseURL = @"http://api.wunderground.com/api/69e67fdea2aebbe7/conditions/q/CA/";
+
 @implementation WIHTTPSessionManager
 
 
@@ -16,7 +18,7 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[self alloc] initWithBaseURL:[NSURL URLWithString:@" "]];
+        sharedInstance = [[self alloc] initWithBaseURL:[NSURL URLWithString:baseURL]];
         sharedInstance.responseSerializer = [AFJSONResponseSerializer serializer];
         
     });
@@ -25,8 +27,11 @@
 
 
 - (void)fetchWeatherDataForZipCode:(NSString *)zipCode andOnSuccess:(SuccessBlock)success onFailure:(failureBlock)failure {
-    [self GET:zipCode parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        success(responseObject);
+    [self GET:zipCode parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
+        NSError *error = nil;
+        WIWeatherData *weather = [MTLJSONAdapter modelOfClass:[WIWeatherData class] fromJSONDictionary:responseObject[@"current_observation"] error:&error];
+        NSLog(@"%@",error);
+        success(weather);
     }
     failure:^(NSURLSessionDataTask *task, NSError *error) {
         failure(error);
