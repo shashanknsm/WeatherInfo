@@ -12,7 +12,6 @@
 #import "WITableViewCell.h"
 #import <MapKit/MapKit.h>
 
-
 @interface WIDetailInfoViewController : UIViewController 
 
 @property (nonatomic, strong) WIWeatherData *weatherData;

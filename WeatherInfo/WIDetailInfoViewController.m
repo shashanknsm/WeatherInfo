@@ -9,6 +9,7 @@
 #import "WIDetailInfoViewController.h"
 
 static NSString *const cellIdentifier = @"detailCell";
+static NSString *const cellNibName = @"WITableViewCell";
 
 @interface WIDetailInfoViewController ()
 
@@ -21,11 +22,9 @@ static NSString *const cellIdentifier = @"detailCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@",self.weatherData);
-    
     WIWeatherData *weatherData = self.weatherData;
 
-    UINib *nib = [UINib nibWithNibName:@"WITableViewCell" bundle:nil];
+    UINib *nib = [UINib nibWithNibName:cellNibName bundle:nil];
     [self.detailsTableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
     
     [self configureScreenWithData:weatherData];

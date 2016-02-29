@@ -34,7 +34,6 @@
 @property (nonatomic, copy, readonly) NSString *latitude;
 @property (nonatomic, copy, readonly) NSString *longitude;
 
-
 + (NSDateFormatter *)dateFormatter;
 
 @end

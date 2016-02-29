@@ -13,12 +13,10 @@
 typedef void(^SuccessBlock)(WIWeatherData *weatherData);
 typedef void(^failureBlock)(NSError *error);
 
-
 @interface WIHTTPSessionManager : AFHTTPSessionManager
 
 + (WIHTTPSessionManager *)sharedManager;
 
 - (void)fetchWeatherDataForZipCode:(NSString *)zipCode andOnSuccess:(SuccessBlock)success onFailure:(failureBlock)failure;
-
 
 @end

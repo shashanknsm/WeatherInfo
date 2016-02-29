@@ -10,18 +10,20 @@
         <scene sceneID="GgT-nr-epd">
             <objects>
                 <tableViewController title=" " id="Jkz-hR-PS8" customClass="WIZipcodeTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nS8-G5-BHP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="nS8-G5-BHP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" id="czh-xc-oLN">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" rowHeight="50" id="czh-xc-oLN">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="czh-xc-oLN" id="5oo-xP-pQw">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <segue destination="Pfs-t9-fWb" kind="show" identifier="pushDetail" id="lpS-72-pOs"/>
                                 </connections>
@@ -32,8 +34,9 @@
                             <outlet property="delegate" destination="Jkz-hR-PS8" id="1Jh-c6-ocm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Weather" id="zfz-YE-b4L">
+                    <navigationItem key="navigationItem" title="ZipCodes" id="zfz-YE-b4L">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wAN-I4-ABT">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="addZipCode:" destination="Jkz-hR-PS8" id="CEg-MX-RqV"/>
                             </connections>

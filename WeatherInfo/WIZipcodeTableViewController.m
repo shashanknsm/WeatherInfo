@@ -44,10 +44,10 @@ static NSString *const detailSegueIdentifier = @"pushDetail";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     NSString *zipCode = [self.zipCodes objectAtIndex:indexPath.row];
-    NSString *query = [zipCode stringByAppendingString:@".json"];
+    NSString *resourcePath = [zipCode stringByAppendingString:@".json"];
     [SVProgressHUD show];
     
-    [[WIHTTPSessionManager sharedManager] fetchWeatherDataForZipCode:query andOnSuccess:^(WIWeatherData *weatherData) {
+    [[WIHTTPSessionManager sharedManager] fetchWeatherDataForZipCode:resourcePath andOnSuccess:^(WIWeatherData *weatherData) {
         [SVProgressHUD dismiss];
         [self performSegueWithIdentifier:detailSegueIdentifier sender:weatherData];
     } onFailure:^(NSError *error) {
