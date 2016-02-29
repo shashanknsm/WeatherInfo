@@ -28,6 +28,7 @@ static NSString* const baseURL = @"http://api.wunderground.com/api/69e67fdea2aeb
 
 - (void)fetchWeatherDataForZipCode:(NSString *)zipCode andOnSuccess:(SuccessBlock)success onFailure:(failureBlock)failure {
     NSLog(@"fetching data for %@",zipCode);
+    
     [self GET:zipCode parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
         NSError *jsonError = nil;
         NSError *error = responseObject[@"response"][@"error"];
@@ -42,6 +43,5 @@ static NSString* const baseURL = @"http://api.wunderground.com/api/69e67fdea2aeb
         failure(error);
     }];
 }
-
 
 @end

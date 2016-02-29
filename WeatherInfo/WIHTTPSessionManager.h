@@ -21,5 +21,4 @@ typedef void(^failureBlock)(NSError *error);
 - (void)fetchWeatherDataForZipCode:(NSString *)zipCode andOnSuccess:(SuccessBlock)success onFailure:(failureBlock)failure;
 
 
-
 @end

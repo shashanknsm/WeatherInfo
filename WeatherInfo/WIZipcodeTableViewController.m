@@ -73,7 +73,6 @@ static NSString *const detailSegueIdentifier = @"pushDetail";
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     
     [self configureZipCodeAlertController:alertController];
-    
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
@@ -86,7 +85,7 @@ static NSString *const detailSegueIdentifier = @"pushDetail";
 
 - (NSMutableArray *)zipCodes {
     if (!_zipCodes) {
-        _zipCodes = [NSMutableArray arrayWithArray:@[@"94086",@"75080",@"75252",@"00000"]];
+        _zipCodes = [NSMutableArray arrayWithArray:@[@"94086",@"75080",@"75252"]];
     }
     return _zipCodes;
 }

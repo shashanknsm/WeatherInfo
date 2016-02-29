@@ -28,7 +28,9 @@
         @"precipitation":@"precip_1hr_string",
         @"currentDate":@"local_time_rfc822",
         @"icon":@"icon",
-        @"iconURL":@"icon_url"
+        @"iconURL":@"icon_url",
+        @"latitude" : @"display_location.latitude",
+        @"longitude": @"display_location.longitude"
     };
 }
 
@@ -51,6 +53,8 @@
 + (NSValueTransformer *)iconURLJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
+
+
 
 
 @end
